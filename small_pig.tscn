@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://rqmqqqw3lsib"]
+
+[ext_resource type="Texture2D" uid="uid://5t0fle1qus0o" path="res://small_pig.png" id="1_wma15"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qbebx"]
+radius = 61.0
+height = 122.0
+
+[node name="RigidBody2D" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -0.999999)
+scale = Vector2(0.12173, 0.12173)
+texture = ExtResource("1_wma15")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_qbebx")
