@@ -7,9 +7,10 @@
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, 0)
+scale = Vector2(0.490234, 0.490234)
 texture = ExtResource("1_v5ljk")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(-1, 1.19209e-07)
+scale = Vector2(0.485303, 0.488496)
 polygon = PackedVector2Array(59, -250.9, 59, -248, 151.5, 139, 207, 141, 207, 143, 217, 150, 217, 153, 219, 248, 217, 248, 211.4, 256, -211.8, 256, -217, 250.8, -217, 248, -219, 153, -216.9, 153, -205.9, 141, -152.2, 141, -152, 140.5, -152, 136.8, -61.6, -245, -60.5, -245, -58.5, -252, -56.8, -252, -53, -255.8, 53, -256)
