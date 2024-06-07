@@ -6,7 +6,8 @@
 radius = 61.0
 height = 122.0
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="small_pig" type="RigidBody2D"]
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, -0.999999)
