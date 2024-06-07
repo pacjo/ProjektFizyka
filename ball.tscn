@@ -24,4 +24,4 @@ texture = ExtResource("1_a2yak")
 shape = SubResource("CircleShape2D_31bhf")
 
 [node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(0, 0, 108, 0, 85, -21, 87, 21, 107, -1)
+points = PackedVector2Array(0, 0, 108, 0)

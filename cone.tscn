@@ -7,7 +7,7 @@ bounce = 0.2
 
 [node name="cone" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_w605u")
-gravity_scale = 0.85
+gravity_scale = 0.9
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
