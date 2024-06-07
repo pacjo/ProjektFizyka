@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b85lfqxj2srgy"]
+[gd_scene load_steps=5 format=3 uid="uid://b85lfqxj2srgy"]
 
+[ext_resource type="Script" path="res://ball.gd" id="1_50w73"]
 [ext_resource type="Texture2D" uid="uid://ypvharoga5yl" path="res://ball.png" id="1_a2yak"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mycal"]
+bounce = 0.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_31bhf"]
 radius = 52.0865
 
-[node name="Ball" type="Area2D"]
+[node name="Ball" type="RigidBody2D"]
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_mycal")
+script = ExtResource("1_50w73")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -15,3 +22,6 @@ texture = ExtResource("1_a2yak")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_31bhf")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 108, 0, 85, -21, 87, 21, 107, -1)
