@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://clpas4ti1ksu1"]
+
+[ext_resource type="Texture2D" uid="uid://da16uthillhua" path="res://grass.webp" id="1_141r0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_281ie"]
+
+[node name="floor" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 640)
+shape = SubResource("WorldBoundaryShape2D_281ie")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(585, 682)
+scale = Vector2(0.73, 0.042)
+texture = ExtResource("1_141r0")
