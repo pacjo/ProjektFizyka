@@ -2,12 +2,13 @@ extends RigidBody2D
 
 var arrow: Line2D
 var is_dragging: bool = false
+
 const MIN_DRAG_DISTANCE = 30
 const MAX_ARROW_LENGTH = 150
-const VELOCITY_MULTIPLIER = 1000  # Adjust this value as needed
+const VELOCITY_MULTIPLIER = 1400
 
 func _ready():
-	arrow = $Line2D  # Adjust the path to your Line2D node if different
+	arrow = $Line2D
 	arrow.visible = false
 
 func _input(event):

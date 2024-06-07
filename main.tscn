@@ -19,5 +19,8 @@ position = Vector2(1031, 439)
 [node name="cone3" parent="." instance=ExtResource("2_xaj35")]
 position = Vector2(979, 576)
 
+[node name="cone4" parent="." instance=ExtResource("2_xaj35")]
+position = Vector2(1033, 307)
+
 [node name="Ball" parent="." instance=ExtResource("3_ndo05")]
 position = Vector2(188, 536)
