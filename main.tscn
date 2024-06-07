@@ -11,10 +11,10 @@ script = ExtResource("1_0odmy")
 [node name="floor" parent="." instance=ExtResource("2_wqlio")]
 
 [node name="cone" parent="." instance=ExtResource("2_xaj35")]
-position = Vector2(1086, 575)
+position = Vector2(1088, 576)
 
 [node name="cone2" parent="." instance=ExtResource("2_xaj35")]
-position = Vector2(1032, 447)
+position = Vector2(1031, 439)
 
 [node name="cone3" parent="." instance=ExtResource("2_xaj35")]
 position = Vector2(979, 576)
