@@ -1,16 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://clpas4ti1ksu1"]
+[gd_scene load_steps=4 format=3 uid="uid://clpas4ti1ksu1"]
 
 [ext_resource type="Texture2D" uid="uid://da16uthillhua" path="res://grass.webp" id="1_141r0"]
+[ext_resource type="Script" path="res://floor.gd" id="1_503cj"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_281ie"]
 
 [node name="floor" type="StaticBody2D"]
+script = ExtResource("1_503cj")
+floor_sprite_count = 25
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="FloorBoundary" type="CollisionShape2D" parent="."]
 position = Vector2(0, 640)
 shape = SubResource("WorldBoundaryShape2D_281ie")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(585, 682)
-scale = Vector2(0.73, 0.042)
+[node name="FloorSprite" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_141r0")
