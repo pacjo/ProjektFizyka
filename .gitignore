@@ -3,3 +3,6 @@
 
 # git addon
 addons/godot-git-plugin
+
+# releases (for now)
+releases
