@@ -9,7 +9,7 @@ var current_velocity = Vector2.ZERO
 
 const MIN_DRAG_DISTANCE = 30
 const MAX_ARROW_LENGTH = 150
-const VELOCITY_MULTIPLIER = 1100
+const VELOCITY_MULTIPLIER = 2000
 
 func _ready():
 	arrow = $Line2D
@@ -72,10 +72,9 @@ func draw_arrow(pointer_position):
 	# also rotate player's leg (TODO: move this somewhere else?)
 	var player: Area2D = get_parent().get_node("Player")
 	player.rotate_leg_sprite((distance / MAX_ARROW_LENGTH) * 2 * 360)               # TODO: make const
-	player.rotate_leg_sprite((distance / MAX_ARROW_LENGTH) * 2 * 360)
 
 func apply_velocity(pointer_position):
 	var distance = global_position.distance_to(pointer_position)
 	var direction = (global_position - pointer_position).normalized()
-	linear_velocity = direction * (distance / MAX_ARROW_LENGTH) * VELOCITY_MULTIPLIER		# TODO: limit by some max
+	linear_velocity = direction * (min(distance, MAX_ARROW_LENGTH) / MAX_ARROW_LENGTH) * VELOCITY_MULTIPLIER
 	wasShoot = true

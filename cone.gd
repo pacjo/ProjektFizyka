@@ -2,7 +2,7 @@ extends RigidBody2D
 
 @export var health = 200
 @export var post_colision_speed_multiplier = 0.5
-const DAMAGE_MULTIPLIER = 400
+const DAMAGE_MULTIPLIER = 0.6
 
 func _ready():
 	# without those collisions won't be detected
@@ -12,11 +12,12 @@ func _ready():
 func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if body.name == "Ball":
 		# Use the current_velocity property of the ball
-		var relative_velocity = body.current_velocity - self.linear_velocity
+		var relative_velocity = body.linear_velocity - self.linear_velocity
 		var impact_force = relative_velocity.length()
 		
 		var damage = impact_force * DAMAGE_MULTIPLIER
 		health -= damage
+		#print(name + " - hit - impact force: ", impact_force, ", health: ", health)
 		if health <= 0:
 			preserve_ball_velocity(body)
 
