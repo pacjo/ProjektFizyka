@@ -71,6 +71,6 @@ func draw_arrow(pointer_position):
 func apply_velocity(pointer_position):
 	var distance = global_position.distance_to(pointer_position)
 	var direction = (global_position - pointer_position).normalized()
-	linear_velocity = direction * (distance / MAX_ARROW_LENGTH) * VELOCITY_MULTIPLIER
+	linear_velocity = direction * (distance / MAX_ARROW_LENGTH) * VELOCITY_MULTIPLIER		# TODO: limit by some max
 	
 	wasShoot = true

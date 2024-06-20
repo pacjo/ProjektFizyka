@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://rqmqqqw3lsib"]
 
-[ext_resource type="Texture2D" uid="uid://5t0fle1qus0o" path="res://small_pig.png" id="1_wma15"]
+[ext_resource type="Texture2D" uid="uid://crugsx53j4a2i" path="res://small_pig.png" id="1_wma15"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qbebx"]
 radius = 61.0
