@@ -5,6 +5,8 @@ var is_dragging: bool = false
 var wasShoot: bool = false
 @export var health: float = 10
 
+var current_velocity = Vector2.ZERO
+
 const MIN_DRAG_DISTANCE = 30
 const MAX_ARROW_LENGTH = 150
 const VELOCITY_MULTIPLIER = 1100
@@ -19,10 +21,14 @@ func _process(delta):
 	# ...and we only do that if it was already shoot (wasShoot)
 	if wasShoot:
 		health -= delta
-
+ 	
 	if health <= 0:
 		# TODO: add animation (maybe a disappearing cloud?)
-		free()
+		queue_free()
+
+func _physics_process(delta):
+	# Update current velocity every frame
+	current_velocity = linear_velocity
 
 func _input(event):
 	if !wasShoot:
@@ -44,7 +50,6 @@ func _input(event):
 func _is_pointer_over_ball(pointer_position):
 	var space_state = get_world_2d().direct_space_state
 	var query = PhysicsPointQueryParameters2D.new()
-	
 	query.position = pointer_position
 	var result = space_state.intersect_point(query)
 	
@@ -66,11 +71,11 @@ func draw_arrow(pointer_position):
 	
 	# also rotate player's leg (TODO: move this somewhere else?)
 	var player: Area2D = get_parent().get_node("Player")
-	player.rotate_leg_sprite((distance / MAX_ARROW_LENGTH) * 2 * 360)		# TODO: make const
+	player.rotate_leg_sprite((distance / MAX_ARROW_LENGTH) * 2 * 360)               # TODO: make const
+	player.rotate_leg_sprite((distance / MAX_ARROW_LENGTH) * 2 * 360)
 
 func apply_velocity(pointer_position):
 	var distance = global_position.distance_to(pointer_position)
 	var direction = (global_position - pointer_position).normalized()
 	linear_velocity = direction * (distance / MAX_ARROW_LENGTH) * VELOCITY_MULTIPLIER		# TODO: limit by some max
-	
 	wasShoot = true
