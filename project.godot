@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ProjektFizyka"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/start_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://assets/small_pig.png"
 
@@ -43,7 +43,6 @@ pause={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
-pointing/emulate_mouse_from_touch=false
 
 [rendering]
 

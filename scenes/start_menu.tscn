@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2blc7f14lhk7"]
+
+[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_7ohb4"]
+[ext_resource type="Texture2D" uid="uid://qd21uk0i07gp" path="res://assets/angry_bird_tło.png" id="1_8dqur"]
+[ext_resource type="PackedScene" uid="uid://bph3xavc6p43c" path="res://scenes/text_button.tscn" id="3_qoma4"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7ohb4")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -123.0
+offset_right = 3583.0
+offset_bottom = 1440.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_8dqur")
+
+[node name="MainMenuContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 80.0
+offset_right = 175.0
+offset_bottom = 206.0
+grow_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenuContainer"]
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/normal_font_size = 85
+bbcode_enabled = true
+text = "[center]Angry[color=red]Balls[/color][/center]"
+fit_content = true
+
+[node name="StartButton" parent="MainMenuContainer" instance=ExtResource("3_qoma4")]
+layout_mode = 2
+
+[node name="AboutButton" parent="MainMenuContainer" instance=ExtResource("3_qoma4")]
+layout_mode = 2
+
+[node name="QuitButton" parent="MainMenuContainer" instance=ExtResource("3_qoma4")]
+layout_mode = 2
