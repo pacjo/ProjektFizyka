@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da16uthillhua"
-path="res://.godot/imported/grass.webp-a900c4f4f027d419f767f8f80e088597.ctex"
+uid="uid://qd21uk0i07gp"
+path="res://.godot/imported/angry_bird_tło.png-f6ada01a993bc3658f25622c6ffd3407.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grass.webp"
-dest_files=["res://.godot/imported/grass.webp-a900c4f4f027d419f767f8f80e088597.ctex"]
+source_file="res://assets/angry_bird_tło.png"
+dest_files=["res://.godot/imported/angry_bird_tło.png-f6ada01a993bc3658f25622c6ffd3407.ctex"]
 
 [params]
 

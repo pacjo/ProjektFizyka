@@ -7,7 +7,7 @@ extends Area2D
 const DEFAULT_ROTATION = 55
 
 func _ready():
-	rotate_leg_sprite(DEFAULT_ROTATION)
+	rotate_leg_sprite(0)
 
 func rotate_leg_sprite(angle_degrees: float):
-	leg_sprite.rotation_degrees = angle_degrees
+	leg_sprite.rotation_degrees = angle_degrees + DEFAULT_ROTATION

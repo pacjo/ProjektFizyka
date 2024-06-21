@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qd21uk0i07gp"
-path="res://.godot/imported/angry_bird_tło.png-91249c857a3d2dfafaf256154bd1aba6.ctex"
+uid="uid://b1yyoynif25l2"
+path="res://.godot/imported/cone.png-5ad22bbe7dff0f4d471147fd90031043.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://angry_bird_tło.png"
-dest_files=["res://.godot/imported/angry_bird_tło.png-91249c857a3d2dfafaf256154bd1aba6.ctex"]
+source_file="res://assets/cone.png"
+dest_files=["res://.godot/imported/cone.png-5ad22bbe7dff0f4d471147fd90031043.ctex"]
 
 [params]
 

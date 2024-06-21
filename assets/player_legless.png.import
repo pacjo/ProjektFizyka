@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bu1f0tosy6qfq"
-path="res://.godot/imported/player_legless.png-e85a90353920d8ab89f1e25f983e1358.ctex"
+path="res://.godot/imported/player_legless.png-d185b96b3646fdf2c0de1ad4ce4ef9ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player_legless.png"
-dest_files=["res://.godot/imported/player_legless.png-e85a90353920d8ab89f1e25f983e1358.ctex"]
+source_file="res://assets/player_legless.png"
+dest_files=["res://.godot/imported/player_legless.png-d185b96b3646fdf2c0de1ad4ce4ef9ff.ctex"]
 
 [params]
 

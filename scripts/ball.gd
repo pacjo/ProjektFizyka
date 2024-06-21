@@ -26,26 +26,27 @@ func _process(delta):
 		# TODO: add animation (maybe a disappearing cloud?)
 		queue_free()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Update current velocity every frame
 	current_velocity = linear_velocity
 
 func _input(event):
 	if !wasShoot:
-		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event is InputEventScreenTouch:
 			if event.pressed:
-				# we started dragging the ball - show arrow and calculate stuff
-				if _is_pointer_over_ball(event.global_position):
+				# We started touching the ball - show arrow and calculate stuff
+				if _is_pointer_over_ball(event.position):
 					is_dragging = true
-					draw_arrow(event.global_position)
+					draw_arrow(event.position)
 			else:
-				# we stopped dragging the ball - throw it
+				# We stopped touching the ball - throw it
 				is_dragging = false
 				if arrow.visible:
-					apply_velocity(event.global_position)
+					apply_velocity(event.position)
 				arrow.visible = false
-		elif event is InputEventMouseMotion and is_dragging:
-			draw_arrow(event.global_position)
+		elif event is InputEventScreenDrag and is_dragging:
+			# Continue dragging the ball - update arrow
+			draw_arrow(event.position)
 
 func _is_pointer_over_ball(pointer_position):
 	var space_state = get_world_2d().direct_space_state

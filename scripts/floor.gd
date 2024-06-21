@@ -3,7 +3,7 @@ extends StaticBody2D
 @onready var collision_shape = $FloorBoundary
 @onready var floor_sprite_template = $FloorSprite
 
-@export var floor_sprite_count: int = 10
+@export var floor_sprite_count: int = 20
 
 func _ready():
 	add_floor_sprites()

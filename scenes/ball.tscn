@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b85lfqxj2srgy"]
 
-[ext_resource type="Script" path="res://ball.gd" id="1_50w73"]
-[ext_resource type="Texture2D" uid="uid://ypvharoga5yl" path="res://ball.png" id="1_a2yak"]
+[ext_resource type="Texture2D" uid="uid://ypvharoga5yl" path="res://assets/ball.png" id="1_a2yak"]
+[ext_resource type="Script" path="res://scripts/ball.gd" id="1_qflhd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mycal"]
 bounce = 0.5
@@ -12,7 +12,7 @@ radius = 52.0865
 [node name="Ball" type="RigidBody2D"]
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_mycal")
-script = ExtResource("1_50w73")
+script = ExtResource("1_qflhd")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

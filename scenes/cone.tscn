@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1q8f6on4rks7"]
+
+[ext_resource type="Script" path="res://scripts/cone.gd" id="1_k5a2t"]
+[ext_resource type="Texture2D" uid="uid://b1yyoynif25l2" path="res://assets/cone.png" id="1_v5ljk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w605u"]
+bounce = 0.2
+
+[sub_resource type="Animation" id="Animation_4uxlm"]
+resource_name = "destruction"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.0295573, 0.0295573)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.15, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4evy5"]
+_data = {
+"destruction": SubResource("Animation_4uxlm")
+}
+
+[node name="cone" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_w605u")
+gravity_scale = 0.9
+script = ExtResource("1_k5a2t")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_v5ljk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.25, 0.25)
+polygon = PackedVector2Array(56.3, -248.4, 59.3, -239.4, 150.1, 143.7, 205.4, 143.7, 214.3, 152.5, 216.3, 154.5, 215, 247.3, 212.5, 251.3, 207, 256, -207.1, 256, -214.3, 250.6, -216.3, 246.5, -215, 153.7, -212.5, 149.7, -205.5, 143.7, -150.3, 143.7, -57.9, -244.3, -54.6, -251.3, -48.3, -255.8, 48.3, -256)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4evy5")
+}
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
