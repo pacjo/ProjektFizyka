@@ -5,16 +5,16 @@ func _ready():
 	$MainMenuContainer/AboutButton.text = "About"
 	$MainMenuContainer/QuitButton.text = "Exit"
 	
-	#$MainContainer/MusicToggleButton.icon = preload("res://path_to_music_icon.png")
-	#$MainContainer/PlaceholderButton.icon = preload("res://path_to_placeholder_icon.png")
+	$SettingsMenuContainer/MusicButton.texture_normal = preload("res://assets/volume-off.svg")
+	$SettingsMenuContainer/MoonButton.texture_normal = preload("res://assets/space-station.svg")
 
 	# Connect buttons to their respective functions
 	$MainMenuContainer/StartButton.pressed.connect(_on_start_button_pressed)
 	$MainMenuContainer/AboutButton.pressed.connect(_on_about_button_pressed)
 	$MainMenuContainer/QuitButton.pressed.connect(_on_exit_button_pressed)
 	
-	#$MusicToggleButton.connect("pressed", self, "_on_music_toggle_button_pressed")
-	#$PlaceholderButton.connect("pressed", self, "_on_placeholder_button_pressed")
+	$SettingsMenuContainer/MusicButton.pressed.connect(_on_music_button_pressed)
+	$SettingsMenuContainer/MoonButton.pressed.connect(_on_moon_button_pressed)
 
 func _process(_delta):
 	if Input.is_action_pressed("pause"):
@@ -32,10 +32,10 @@ func _on_exit_button_pressed():
 	# exit game
 	get_tree().quit()
 
-#func _on_music_toggle_button_pressed():
-	## Toggle music on/off
-	#print("Music toggle button pressed")
+func _on_music_button_pressed():
+	# Toggle music on/off
+	print("Music toggle button pressed")
 
-#func _on_placeholder_button_pressed():
-	## Placeholder for future functionality
-	#print("Placeholder button pressed")
+func _on_moon_button_pressed():
+	# enable "moon mode"
+	print("MOON MODE!!")
