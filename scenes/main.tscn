@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3nqu0eedat7n"]
+[gd_scene load_steps=8 format=3 uid="uid://d3nqu0eedat7n"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_8vduh"]
 [ext_resource type="Texture2D" uid="uid://qd21uk0i07gp" path="res://assets/angry_bird_tło.png" id="2_1xkfr"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b1q8f6on4rks7" path="res://scenes/cone.tscn" id="2_xaj35"]
 [ext_resource type="PackedScene" uid="uid://b85lfqxj2srgy" path="res://scenes/ball.tscn" id="3_ndo05"]
 [ext_resource type="PackedScene" uid="uid://dx4fddckr801c" path="res://scenes/player.tscn" id="5_w6o2h"]
+[ext_resource type="PackedScene" uid="uid://c61spwgs6rtct" path="res://scenes/score_label.tscn" id="7_c2xq7"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_8vduh")
@@ -36,3 +37,11 @@ position = Vector2(313, 574)
 
 [node name="Player" parent="." instance=ExtResource("5_w6o2h")]
 position = Vector2(215, 359)
+
+[node name="ScoreLabel" parent="." instance=ExtResource("7_c2xq7")]
+offset_left = 1066.0
+offset_top = 12.0
+offset_right = 1166.0
+offset_bottom = 54.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30

@@ -1,8 +1,10 @@
 extends RigidBody2D
 
+const DAMAGE_MULTIPLIER = 0.6
+
 @export var health = 200
 @export var post_colision_speed_multiplier = 0.5
-const DAMAGE_MULTIPLIER = 0.6
+@export var score_points = 100
 
 func _ready():
 	# without those collisions won't be detected
@@ -20,6 +22,7 @@ func _on_body_shape_entered(_body_rid, body, _body_shape_index, _local_shape_ind
 		#print(name + " - hit - impact force: ", impact_force, ", health: ", health)
 		if health <= 0:
 			play_destruction_animation()
+			ScoreManager.add_score(score_points)
 			preserve_ball_velocity(body)
 
 func preserve_ball_velocity(ball):
