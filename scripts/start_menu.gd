@@ -17,19 +17,17 @@ func _ready():
 	$SettingsMenuContainer/MoonButton.pressed.connect(_on_moon_button_pressed)
 
 func _process(_delta):
+	# TODO: fix exiting when AboutDialog is open
 	if Input.is_action_pressed("pause"):
 		get_tree().quit()		# TODO: change to pause
 
 func _on_start_button_pressed():
-	# Start the game (replace 'GameScene' with the actual path to your game scene)
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 func _on_about_button_pressed():
-	# TODO: probably a popup?
-	print("About button pressed")
+	$AboutDialog.popup_centered()
 
 func _on_exit_button_pressed():
-	# exit game
 	get_tree().quit()
 
 func _on_music_button_pressed():

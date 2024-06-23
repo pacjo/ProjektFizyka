@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2blc7f14lhk7"]
+[gd_scene load_steps=6 format=3 uid="uid://c2blc7f14lhk7"]
 
 [ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_7ohb4"]
 [ext_resource type="Texture2D" uid="uid://qd21uk0i07gp" path="res://assets/angry_bird_tło.png" id="1_8dqur"]
 [ext_resource type="PackedScene" uid="uid://bph3xavc6p43c" path="res://scenes/text_button.tscn" id="3_qoma4"]
 [ext_resource type="PackedScene" uid="uid://bf64o081b6vag" path="res://scenes/icon_button.tscn" id="4_kc80j"]
+[ext_resource type="PackedScene" uid="uid://j02kepvhv1xn" path="res://scenes/about_dialog.tscn" id="5_1asin"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -71,3 +72,5 @@ layout_mode = 2
 
 [node name="MoonButton" parent="SettingsMenuContainer" instance=ExtResource("4_kc80j")]
 layout_mode = 2
+
+[node name="AboutDialog" parent="." instance=ExtResource("5_1asin")]
