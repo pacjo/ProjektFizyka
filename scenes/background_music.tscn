@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://vrjjhimqf6d7"]
+
+[ext_resource type="AudioStream" uid="uid://chmrn422gnnst" path="res://assets/hymn_euro2012.mp3" id="1_mfjeh"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_mfjeh")
