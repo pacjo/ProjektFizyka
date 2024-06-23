@@ -48,4 +48,5 @@ func _on_music_button_pressed():
 
 func _on_moon_button_pressed():
 	# enable "moon mode"
+	# TODO: do the same as we did with music icon
 	print("MOON MODE!!")

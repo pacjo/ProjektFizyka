@@ -19,6 +19,7 @@ config/icon="res://assets/small_pig.png"
 
 ScoreManager="*res://scripts/ScoreManager.gd"
 BackgroundMusic="*res://scenes/background_music.tscn"
+Background="*res://scenes/background.tscn"
 
 [display]
 

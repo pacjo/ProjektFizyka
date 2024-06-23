@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3nqu0eedat7n"]
+[gd_scene load_steps=7 format=3 uid="uid://d3nqu0eedat7n"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_8vduh"]
-[ext_resource type="Texture2D" uid="uid://qd21uk0i07gp" path="res://assets/angry_bird_tło.png" id="2_1xkfr"]
 [ext_resource type="PackedScene" uid="uid://clpas4ti1ksu1" path="res://scenes/floor.tscn" id="2_wqlio"]
 [ext_resource type="PackedScene" uid="uid://b1q8f6on4rks7" path="res://scenes/cone.tscn" id="2_xaj35"]
 [ext_resource type="PackedScene" uid="uid://b85lfqxj2srgy" path="res://scenes/ball.tscn" id="3_ndo05"]
@@ -10,13 +9,6 @@
 
 [node name="Main" type="Node"]
 script = ExtResource("1_8vduh")
-
-[node name="Background" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Background"]
-position = Vector2(711.5, 374)
-scale = Vector2(0.746484, 0.517361)
-texture = ExtResource("2_1xkfr")
 
 [node name="floor" parent="." instance=ExtResource("2_wqlio")]
 
