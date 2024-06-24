@@ -1,6 +1,5 @@
 extends Area2D
 
-# set manually in the Inspector sidebar
 @onready var legless_sprite: Sprite2D = $LeglessSprite
 @onready var leg_sprite: Sprite2D = $LegSprite
 

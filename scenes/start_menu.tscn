@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2blc7f14lhk7"]
+[gd_scene load_steps=6 format=3 uid="uid://c2blc7f14lhk7"]
 
 [ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_7ohb4"]
 [ext_resource type="PackedScene" uid="uid://bph3xavc6p43c" path="res://scenes/text_button.tscn" id="3_qoma4"]
 [ext_resource type="PackedScene" uid="uid://bf64o081b6vag" path="res://scenes/icon_button.tscn" id="4_kc80j"]
 [ext_resource type="PackedScene" uid="uid://j02kepvhv1xn" path="res://scenes/about_dialog.tscn" id="5_1asin"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c4cmj"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -35,6 +37,11 @@ theme_override_font_sizes/normal_font_size = 85
 bbcode_enabled = true
 text = "[center]Angry[color=red]Balls[/color][/center]"
 fit_content = true
+
+[node name="Spacer" type="HSeparator" parent="MainMenuContainer"]
+layout_mode = 2
+theme_override_constants/separation = 75
+theme_override_styles/separator = SubResource("StyleBoxEmpty_c4cmj")
 
 [node name="StartButton" parent="MainMenuContainer" instance=ExtResource("3_qoma4")]
 layout_mode = 2

@@ -1,5 +1,9 @@
 extends Control
 
+@onready var start_button = $MainMenuContainer/StartButton
+@onready var about_button = $MainMenuContainer/AboutButton
+@onready var quit_button = $MainMenuContainer/QuitButton
+
 @onready var music_button = $SettingsMenuContainer/MusicButton
 @onready var moon_button = $SettingsMenuContainer/MoonButton
 
@@ -12,17 +16,17 @@ extends Control
 func _ready():
 	print("Start menu loaded")
 	
-	$MainMenuContainer/StartButton.text = "Start Game"
-	$MainMenuContainer/AboutButton.text = "About"
-	$MainMenuContainer/QuitButton.text = "Exit"
+	start_button.text = "Start Game"
+	about_button.text = "About"
+	quit_button.text = "Exit"
 	
 	music_button.texture_normal = volume_off_icon
 	moon_button.texture_normal = moon_mode_off_icon
 
 	# Connect buttons to their respective functions
-	$MainMenuContainer/StartButton.pressed.connect(_on_start_button_pressed)
-	$MainMenuContainer/AboutButton.pressed.connect(_on_about_button_pressed)
-	$MainMenuContainer/QuitButton.pressed.connect(_on_exit_button_pressed)
+	start_button.pressed.connect(_on_start_button_pressed)
+	about_button.pressed.connect(_on_about_button_pressed)
+	quit_button.pressed.connect(_on_exit_button_pressed)
 	
 	music_button.pressed.connect(_on_music_button_pressed)
 	moon_button.pressed.connect(_on_moon_button_pressed)
