@@ -42,7 +42,7 @@ func _input(event):
 				# We stopped touching the ball - throw it
 				is_dragging = false
 				if arrow.visible:
-					apply_velocity(event.position)
+					kick_ball(event.position)
 				arrow.visible = false
 		elif event is InputEventScreenDrag and is_dragging:
 			# Continue dragging the ball - update arrow
@@ -69,13 +69,16 @@ func draw_arrow(pointer_position):
 	distance = min(distance, MAX_ARROW_LENGTH)
 	arrow.points = [Vector2.ZERO, direction * distance]
 	arrow.visible = true
-	
-	# also rotate player's leg (TODO: move this somewhere else?)
-	var player: Area2D = get_parent().get_node("Player")
-	player.rotate_leg_sprite((distance / MAX_ARROW_LENGTH) * 2 * 360)               # TODO: make const
 
-func apply_velocity(pointer_position):
+func kick_ball(pointer_position):
 	var distance = global_position.distance_to(pointer_position)
 	var direction = (global_position - pointer_position).normalized()
-	linear_velocity = direction * (min(distance, MAX_ARROW_LENGTH) / MAX_ARROW_LENGTH) * VELOCITY_MULTIPLIER
-	wasShoot = true
+	var strength = (min(distance, MAX_ARROW_LENGTH) / MAX_ARROW_LENGTH)
+	
+	# start whole kick shenanigans
+	var player: Area2D = get_parent().get_node("Player")
+	player.kick_ball(strength, self, direction * strength * VELOCITY_MULTIPLIER)
+	
+	## add velocity
+	#linear_velocity = direction * strength * VELOCITY_MULTIPLIER
+	#wasShoot = true
