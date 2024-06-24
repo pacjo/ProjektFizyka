@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://2pbqyqie1rfr"]
 
-[ext_resource type="Texture2D" uid="uid://qd21uk0i07gp" path="res://assets/angry_bird_tło.png" id="1_gfw4u"]
+[ext_resource type="Texture2D" uid="uid://bqqslv0uowt4m" path="res://assets/background_earth.png" id="1_mxhab"]
 
 [node name="Background" type="TextureRect"]
 offset_left = -223.0
 offset_right = 3483.0
 offset_bottom = 1498.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_gfw4u")
+texture = ExtResource("1_mxhab")

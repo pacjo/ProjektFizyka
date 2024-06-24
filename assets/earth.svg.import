@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qd21uk0i07gp"
-path="res://.godot/imported/angry_bird_tło.png-f6ada01a993bc3658f25622c6ffd3407.ctex"
+uid="uid://ctfsqe2rq36r5"
+path="res://.godot/imported/earth.svg-6a985aed796f66c6cfb8bc6868948aa7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/angry_bird_tło.png"
-dest_files=["res://.godot/imported/angry_bird_tło.png-f6ada01a993bc3658f25622c6ffd3407.ctex"]
+source_file="res://assets/earth.svg"
+dest_files=["res://.godot/imported/earth.svg-6a985aed796f66c6cfb8bc6868948aa7.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

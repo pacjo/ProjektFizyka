@@ -42,7 +42,6 @@ _data = {
 
 [node name="cone" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_w605u")
-gravity_scale = 0.9
 script = ExtResource("1_k5a2t")
 metadata/_edit_group_ = true
 

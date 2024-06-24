@@ -6,6 +6,9 @@ extends Control
 @onready var volume_on_icon = preload("res://assets/volume-high.svg")
 @onready var volume_off_icon = preload("res://assets/volume-off.svg")
 
+@onready var moon_mode_on_icon = preload("res://assets/space-station.svg")
+@onready var moon_mode_off_icon = preload("res://assets/earth.svg")
+
 func _ready():
 	print("Start menu loaded")
 	
@@ -14,7 +17,7 @@ func _ready():
 	$MainMenuContainer/QuitButton.text = "Exit"
 	
 	music_button.texture_normal = volume_off_icon
-	moon_button.texture_normal = preload("res://assets/space-station.svg")
+	moon_button.texture_normal = moon_mode_off_icon
 
 	# Connect buttons to their respective functions
 	$MainMenuContainer/StartButton.pressed.connect(_on_start_button_pressed)
@@ -47,6 +50,12 @@ func _on_music_button_pressed():
 		music_button.texture_normal = volume_on_icon
 
 func _on_moon_button_pressed():
-	# enable "moon mode"
-	# TODO: do the same as we did with music icon
-	print("MOON MODE!!")
+	# toogle "moon mode"
+	if GameManager.moon_mode:
+		GameManager.moon_mode = false
+		Background.texture = preload("res://assets/background_earth.png")
+		moon_button.texture_normal = moon_mode_off_icon
+	else:
+		GameManager.moon_mode = true
+		Background.texture = preload("res://assets/background_moon.webp")
+		moon_button.texture_normal = moon_mode_on_icon
