@@ -6,6 +6,11 @@ extends StaticBody2D
 @export var floor_sprite_count: int = 20
 
 func _ready():
+	if GameManager.moon_mode:
+		$FloorSprite.texture = preload("res://assets/smooth_basalt.webp")
+	else:
+		$FloorSprite.texture = preload("res://assets/grass.webp")
+	
 	add_floor_sprites()
 
 func add_floor_sprites():
@@ -14,10 +19,20 @@ func add_floor_sprites():
 		print("Floor sprite template not found!")
 		return
 	
-	# get texture size
-	# TODO: we could probably scale the sprite automatically based on
-	# how much space is between lower screen boundary and FloorBoundary
-	var sprite_size = floor_sprite_template.texture.get_size() * floor_sprite_template.scale
+	# Get the texture size
+	var texture_size = floor_sprite_template.texture.get_size()
+	
+	# Get the height difference between the bottom of the screen and the FloorBoundary
+	var screen_bottom = get_viewport_rect().size.y
+	var floor_boundary_y = collision_shape.global_position.y
+	var height_difference = screen_bottom - floor_boundary_y
+
+	# Calculate the required scale to fit the height difference
+	var scale_factor = height_difference / texture_size.y
+	floor_sprite_template.scale = Vector2(scale_factor, scale_factor)
+	
+	# Get the scaled sprite size
+	var sprite_size = texture_size * scale_factor
 	
 	# Check if the shape is a WorldBoundaryShape2D
 	var shape = collision_shape.shape
@@ -34,6 +49,5 @@ func add_floor_sprites():
 			
 			# Move to the next position
 			current_x += sprite_size.x
-
 	else:
 		print("Unsupported shape type. Only WorldBoundaryShape2D is supported for now.")
